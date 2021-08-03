@@ -1,5 +1,8 @@
 # Menu Checklist Fácil
 
+
+![menu-checklist](https://user-images.githubusercontent.com/66564811/128036500-5eabb625-c1e9-4fea-afd8-2b0f3601da4b.gif)
+
 ---
 
 Feito com ❤️ por Kamila Cerdeira 👋🏽 Entre em contato!

@@ -1,0 +1,8 @@
+.menu-footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: var(--menu-padding);
+
+  background-color: var(--light-green-footer);
+  color: var(--medium-gray);
+}

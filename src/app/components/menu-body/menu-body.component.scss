@@ -1,0 +1,65 @@
+.menu-body-container {
+  overflow-y: auto;
+  height: 50vh;
+
+  //estilização scrollbar
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border: 1px solid rgba(224, 224, 224, 1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+  }
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--menu-padding);
+  cursor: pointer;
+
+  .link-content {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    color: var(--dark-green);
+  }
+
+  .link-text {
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 20px;
+  }
+
+  &.active {
+    background-color: var(--active-green);
+  }
+
+  &.blocked {
+    .link-text,
+    span {
+      color: rgba(0, 0, 0, 0.38);
+    }
+  }
+
+  &.selected {
+    background-color: rgba(33, 33, 33, 0.08);
+  }
+
+  #selected-icon-arrow-up,
+  #selected-icon-arrow-down {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.link-container-minimized {
+  justify-content: center;
+}

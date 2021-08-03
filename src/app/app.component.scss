@@ -1,0 +1,30 @@
+.application {
+  display: flex;
+
+  .application__aside {
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.7s;
+
+    background-color: var(--light-green);
+  }
+  .menu-minimized {
+    width: 5%;
+    transition: 0.7s;
+  }
+
+  .application__main {
+    width: 80%;
+    transition: 0.7s;
+
+    background-image: url("../assets/background-image.png");
+  }
+
+  .main-extended {
+    width: 95%;
+    transition: 0.7s;
+  }
+}

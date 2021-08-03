@@ -1,16 +1,45 @@
-<hr />
-<p>Aqui é a lista de links!</p>
-<p>Menu minimizado? {{ minimize }}</p>
-
 <!-- laço com os links recebidos -->
-<div *ngFor="let link of links">
-  <span *ngIf="link.icon" class="material-icons">{{ link.icon }}</span>
-
-  {{ link.text }}{{ link.isActive ? " - Ativo" : "" }}
-
-  <div *ngFor="let child of link.children">
-    {{ link.text }}
+<!-- Link start-->
+<div class="menu-body-container">
+  <div *ngFor="let link of links">
+    <div
+      class="link-container"
+      *ngIf="link.isVisible"
+      [ngClass]="{
+        'active': link.isActive,
+        'blocked': !link.isEnabled,
+        'selected': link.children && clickedLinkId === link.id,
+        'link-container-minimized': minimize
+      }"
+      (click)="handleClickedLinkId(link.id)">
+      <div class="link-content">
+        <span *ngIf="link.icon" class="material-icons">{{ link.icon }}</span>
+        <span *ngIf="!minimize" class="link-text">{{ link.text }}</span>
+      </div>
+      <div *ngIf="!minimize">
+        <span *ngIf="!link.isEnabled" class="material-icons">lock</span>
+        <span *ngIf="link.children && !(clickedLinkId === link.id)" id="selected-icon-arrow-down" class="material-icons">arrow_drop_down</span>
+        <span *ngIf="link.children && clickedLinkId === link.id" id="selected-icon-arrow-up" class="material-icons">arrow_drop_up</span>
+      </div>
+    </div>
+    <!-- Children start-->
+    <div *ngIf="link.id === clickedLinkId && !minimize">
+      <div *ngFor="let child of link.children">
+        <div
+          *ngIf="child.isVisible"
+          [ngClass]="{'active': child.isActive}"
+          [ngClass]="{'blocked': !child.isEnabled}"
+          class="link-container">
+          <div>
+            <span *ngIf="link.icon" class="material-icons">{{ child.icon }}</span>
+            <span [ngStyle]="{'margin-left':(link.icon ? '44px' : '')}" class="link-text">{{ child.text }}</span>
+          </div>
+          <span id="blocked-icon-lock" *ngIf="!child.isEnabled" class="material-icons">lock</span>
+        </div>
+      </div>
+    </div>
+    <!-- Children end-->
   </div>
 </div>
+<!-- Link end-->
 <!-- laço com os links recebidos end -->
-<hr />

@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --light-green-footer: #f2f9f2;
+  --light-green: #edf9f2;
+  --medium-green: #6ccf97;
+  --dark-green: #15b35a;
+  --active-green: #c1e8cc;
+
+  --light-gray: #616460;
+  --medium-gray: #746e6e;
+
+  --menu-padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+body,
+button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+hr {
+  height: 1px;
+  background-color: #00000010;
+  border: none;
+}

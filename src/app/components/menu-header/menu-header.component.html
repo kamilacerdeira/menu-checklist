@@ -1,7 +1,19 @@
+<div class="menu-header-container" [ngClass]="{'menu-header-container-minimized': minimize}">
+  <div>
+    <span class="material-icons" id="menu-toggle-icon" (click)="handleClick()">menu</span>
+    <img *ngIf="!minimize" src="assets/checklist-logo.svg" alt="Check List Logo" />
+  </div>
+  <div class="user-content">
+    <span class="user-initials">{{ getUserInitials() }}</span>
+    <div *ngIf="!minimize" class="user-info">
+      <span>{{ user?.name }}</span>
+      <span>{{ user?.role }}</span>
+    </div>
+  </div>
+  <button [ngClass]="{'button-minimized': minimize}">
+    <span class="material-icons">done</span>
+    {{ minimize ? '' : 'ADICIONAR LISTA' }}
+  </button>
+</div>
 <hr />
-<p>Aqui é o topo do menu!</p>
-<p>Menu minimizado? {{ minimize }}</p>
-<span class="material-icons" (click)="handleClick()">menu</span>
-{{ user?.name }}
-{{ user?.role }}
-<hr />
+

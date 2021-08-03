@@ -1,7 +1,7 @@
 <!-- app-content -->
 <div class="application" [class.application--menu-minimized]="menuMinimized">
   <!-- painel lateral -->
-  <div class="application__aside">
+  <div class="application__aside" [ngClass]="{'menu-minimized': menuMinimized}">
     <ft-menu-header
       [user]="user"
       [minimize]="menuMinimized"
@@ -15,7 +15,7 @@
   </div>
   <!-- painel lateral end -->
   <!-- container principal -->
-  <div class="application__main">Aqui é o conteúdo principal!</div>
+  <div class="application__main" [ngClass]="{'main-expanded': !menuMinimized}"></div>
   <!-- container principal end -->
 </div>
 <!-- app-content end -->

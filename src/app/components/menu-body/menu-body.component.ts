@@ -24,7 +24,16 @@ export interface MenuLink {
 })
 export class MenuBodyComponent implements OnInit {
   @Input() minimize = false;
+  @Input() clickedLinkId = 0;
   @Input() links: MenuLink[] = [];
+
+  handleClickedLinkId(linkId:number) {
+    if(this.clickedLinkId === linkId) {
+      this.clickedLinkId = 0;
+    } else {
+      this.clickedLinkId = linkId;
+    }
+  }
 
   constructor() {}
 

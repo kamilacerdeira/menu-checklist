@@ -1,9 +1,10 @@
 <hr />
-<p>Aqui é o rodapé do menu</p>
-<p>Menu minimizado? {{ minimize }}</p>
-<div *ngFor="let button of buttons">
-  <span class="material-icons">
+<div *ngIf="minimize" class="menu-footer-container">
+  <span class="material-icons">help_outline</span>
+</div>
+
+<div *ngIf="!minimize" class="menu-footer-container">
+  <span *ngFor="let button of buttons" class="material-icons">
     {{ button.icon }}
   </span>
 </div>
-<hr />
